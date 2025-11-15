@@ -4,13 +4,9 @@
 
 This is a web platform designed to detect spam messages using state-of-the-art machine learning models. The project is part of the MSc Applied Artificial Intelligence course at ICESI University. It leverages the Hugging Face Transformers library to provide powerful natural language processing capabilities for spam detection.
 
-## Participants and Collaborators
+## Collaborators
 
-- **Course**: MSc Applied Artificial Intelligence
-- **Institution**: ICESI University
-- **Contributors**: Course participants and instructors
-
-If you'd like to contribute to this project, please feel free to open an issue or submit a pull request.
+- [Nicolas Colmenares](https://github.com/NickEsColR)
 
 ## Requirements
 
@@ -22,14 +18,6 @@ If you'd like to contribute to this project, please feel free to open an issue o
 This project uses the following main libraries:
 
 - **transformers** (>=4.57.1): State-of-the-art machine learning models from Hugging Face
-- **Additional dependencies** are automatically managed by `uv` and include:
-  - numpy
-  - tokenizers
-  - huggingface-hub
-  - safetensors
-  - requests
-  - pyyaml
-  - and more...
 
 For a complete list of dependencies, see `pyproject.toml` or `requirements.txt`.
 
