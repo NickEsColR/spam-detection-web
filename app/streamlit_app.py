@@ -1,5 +1,6 @@
 import streamlit as st
 from services.spam_detector import SpamDetector
+from components.ui.footer import render_footer
 
 
 @st.cache_resource
@@ -95,17 +96,7 @@ def main():
                 )
 
     # Footer
-    st.divider()
-    st.markdown(
-        """
-        <div style='text-align: center; color: gray; font-size: 0.8em;'>
-            Proyecto desarrollado para el curso de MSc Applied Artificial Intelligence - ICESI University<br>
-            Modelo: <a href='https://huggingface.co/Goodmotion/spam-mail-classifier' target='_blank'>
-            Goodmotion/spam-mail-classifier</a>
-        </div>
-    """,
-        unsafe_allow_html=True,
-    )
+    render_footer()
 
 
 if __name__ == "__main__":
