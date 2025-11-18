@@ -228,6 +228,12 @@ pytest --cov=app --cov-report=html
 # Then open htmlcov/index.html in your browser
 ```
 
+## Run app
+
+```bash
+uv run streamlit run app/streamlit_app.py
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
