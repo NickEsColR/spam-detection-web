@@ -30,16 +30,19 @@ For a complete list of dependencies, see `pyproject.toml` or `requirements.txt`.
 #### Install uv
 
 **Linux/macOS:**
+
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 **Windows:**
+
 ```powershell
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
 Or install via pip:
+
 ```bash
 pip install uv
 ```
@@ -47,36 +50,55 @@ pip install uv
 #### Main uv Commands
 
 1. **Initialize a new project:**
+
    ```bash
    uv init --python 3.12 --name spam-detection-web
    ```
 
 2. **Add a dependency:**
+
    ```bash
    uv add transformers
    ```
 
-3. **Install all dependencies:**
+3. **Install production dependencies only:**
+
+   ```bash
+   uv sync --no-dev
+   ```
+
+4. **Install all dependencies (including development):**
+
    ```bash
    uv sync
    ```
 
-4. **Run a Python script:**
+5. **Add development dependencies:**
+
+   ```bash
+   uv add --dev pytest pytest-cov
+   ```
+
+6. **Run a Python script:**
+
    ```bash
    uv run main.py
    ```
 
-5. **Run a command in the virtual environment:**
+7. **Run a command in the virtual environment:**
+
    ```bash
    uv run python script.py
    ```
 
-6. **Update dependencies:**
+8. **Update dependencies:**
+
    ```bash
    uv lock --upgrade
    ```
 
-7. **Remove a dependency:**
+9. **Remove a dependency:**
+
    ```bash
    uv remove <package-name>
    ```
@@ -86,6 +108,7 @@ pip install uv
 #### Creating and Activating Virtual Environment
 
 **Linux/macOS:**
+
 ```bash
 # Create virtual environment
 python3 -m venv venv
@@ -98,6 +121,7 @@ pip install -r requirements.txt
 ```
 
 **Windows:**
+
 ```cmd
 # Create virtual environment
 python -m venv venv
@@ -105,13 +129,17 @@ python -m venv venv
 # Activate virtual environment
 venv\Scripts\activate
 
-# Install dependencies
+# Install production dependencies only
 pip install -r requirements.txt
+
+# Install development dependencies (optional)
+pip install pytest pytest-cov
 ```
 
 #### Deactivating Virtual Environment
 
 On both Linux/macOS and Windows:
+
 ```bash
 deactivate
 ```
@@ -119,6 +147,7 @@ deactivate
 ## Getting Started
 
 1. Clone this repository:
+
    ```bash
    git clone https://github.com/NickEsColR/spam-detection-web.git
    cd spam-detection-web
@@ -127,6 +156,77 @@ deactivate
 2. Set up your environment using one of the methods above (uv or traditional virtual environment)
 
 3. Start developing!
+
+## Running Tests
+
+This project uses `pytest` for testing. Make sure you have installed development dependencies first.
+
+### Run All Tests
+
+**Using uv:**
+
+```bash
+uv run pytest
+```
+
+**Using traditional virtual environment:**
+
+```bash
+# Make sure virtual environment is activated first and pytest is installed
+pytest
+```
+
+### Run Tests with Coverage
+
+```bash
+# Using uv
+uv run pytest --cov=app
+
+# Using traditional venv (activated)
+pytest --cov=app
+```
+
+### Run Specific Test File
+
+```bash
+# Using uv
+uv run pytest tests/services/test_spam_detector.py
+
+# Using traditional venv (activated)
+pytest tests/services/test_spam_detector.py
+```
+
+### Run Specific Test Function
+
+```bash
+# Using uv
+uv run pytest tests/services/test_spam_detector.py::test_function_name
+
+# Using traditional venv (activated)
+pytest tests/services/test_spam_detector.py::test_function_name
+```
+
+### Run Tests with Verbose Output
+
+```bash
+# Using uv
+uv run pytest -v
+
+# Using traditional venv (activated)
+pytest -v
+```
+
+### Run Tests and Generate HTML Coverage Report
+
+```bash
+# Using uv
+uv run pytest --cov=app --cov-report=html
+
+# Using traditional venv (activated)
+pytest --cov=app --cov-report=html
+
+# Then open htmlcov/index.html in your browser
+```
 
 ## License
 
