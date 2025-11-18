@@ -1,6 +1,7 @@
 import streamlit as st
 from services.spam_detector import SpamDetector
 from components.ui.footer import render_footer
+from components.ui.header import render_header
 
 
 @st.cache_resource
@@ -17,16 +18,7 @@ def main():
         layout="centered",
     )
 
-    # Título y descripción
-    st.title("📧 Spam Email Detector")
-    st.markdown(
-        """
-        Esta aplicación utiliza un modelo de Machine Learning para detectar 
-        si un mensaje de correo electrónico es **spam** o **legítimo**.
-        
-        **Instrucciones:** Escribe o pega el texto del email y presiona el botón para analizar.
-    """
-    )
+    render_header()
 
     # Cargar el modelo
     with st.spinner("Cargando modelo..."):
@@ -95,7 +87,6 @@ def main():
                     }
                 )
 
-    # Footer
     render_footer()
 
 
