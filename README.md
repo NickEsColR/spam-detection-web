@@ -10,7 +10,7 @@ This is a web platform designed to detect spam messages using state-of-the-art m
 - Diego Agudelo
 - Carlos Velez
 - Jean Pierre Londoño
-- Mario J
+- Mario Castellanos
 
 ## Requirements
 
