@@ -7,6 +7,10 @@ This is a web platform designed to detect spam messages using state-of-the-art m
 ## Collaborators
 
 - [Nicolas Colmenares](https://github.com/NickEsColR)
+- Diego Agudelo
+- Carlos Velez
+- Jean Pierre Londoño
+- Mario J
 
 ## Requirements
 
